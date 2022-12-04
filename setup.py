@@ -15,7 +15,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Tibotix",
     author_email="tizian@seehaus.net",
-    url="https://github.com/tibotix/fb-login-brute",
+    url="https://github.com/tibotix/fb_login_brute",
     package_dir={"fb_login_brute": "src"},
     packages=["fb_login_brute"],
     install_requires=install_requires,
