@@ -1,0 +1,10 @@
+venv/
+build/
+.idea/
+.vscode/
+*.pyc
+.coverage
+dist/
+fb_login_brute.egg-info/
+.tox/
+coverage.xml

@@ -1,0 +1,52 @@
+POST https://m.facebook.com/login/account_recovery/name_search/?flow=initiate_view&ls=initiate_view&c=%2Flogin%2F HTTP/1.1
+Host: m.facebook.com
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: de,en-US;q=0.7,en;q=0.3
+Referer: https://m.facebook.com/login/account_recovery/name_search/?cuid=AYjdr_kLpm34OmafM-3kQ2p6TrM1BSOD838xupoF3EHQDlj7R6LdCskudlPK46BkfpJ_PeSQNteqVg6fu9CprFFnc0nGau7L9BlR79Yu_-UJDWyR6THWIgb8o8_seL-POlRgk4-sbBBdHbdT3JGWFfRegWbktbhyxCmFLD1PgNZCzxvYCkOdx4L2rjb1D20ZZzf8OiGc4PtGz0PaffbwAt9K&flow=initiate_view&ls=initiate_view&c=%2Flogin%2F&refsrc=deprecated&_rdr
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 283
+Origin: https://m.facebook.com
+Connection: keep-alive
+Cookie: datr=foaAY77fOQO3wLszroU5435n; m_pixel_ratio=1; wd=1206x688; oo=v1; sb=ZPuAY7gXcjUBWJQn-ksN-Gw1; sfiu=AYi4lkLtqOM5el82WAHn-M01TEjHErwPjajYKS4SaKYu6RSoIuBrCdACc4pjietG_X6tHjUzo3pL_mgU9UmruU5AV8Nt0X8TxuMnmV4buhYlXchag57OVUGvO3lPv3TnonQy5r7ja6vi9h_Wq0pRQtZUCA21FNDpOGP7kwEuGk-9O8jZxQgaXoQ2BWnehvJAoha1Uz-m_JyTyTwDldvDDcNc
+Upgrade-Insecure-Requests: 1
+Sec-Fetch-Dest: document
+Sec-Fetch-Mode: navigate
+Sec-Fetch-Site: same-origin
+Sec-Fetch-User: ?1
+
+lsd=AVoH2Ohu22I&jazoest=2857&cuid=AYjdr_kLpm34OmafM-3kQ2p6TrM1BSOD838xupoF3EHQDlj7R6LdCskudlPK46BkfpJ_PeSQNteqVg6fu9CprFFnc0nGau7L9BlR79Yu_-UJDWyR6THWIgb8o8_seL-POlRgk4-sbBBdHbdT3JGWFfRegWbktbhyxCmFLD1PgNZCzxvYCkOdx4L2rjb1D20ZZzf8OiGc4PtGz0PaffbwAt9K&flow=initiate_view&pass=testpass
+
+
+HTTP/1.1 302 Found
+Set-Cookie: sb=ZPuAY7gXcjUBWJQn-ksN-Gw1; expires=Sun, 24-Nov-2024 17:29:35 GMT; Max-Age=63072000; path=/; domain=.facebook.com; secure; httponly; SameSite=None
+Set-Cookie: sfiu=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=-1669397374; path=/; domain=.facebook.com; httponly
+Set-Cookie: c_user=100088402320224; expires=Sat, 25-Nov-2023 17:29:33 GMT; Max-Age=31535998; path=/; domain=.facebook.com; secure; SameSite=None
+Set-Cookie: xs=30%3A92Cs4r3XNP52aw%3A2%3A1669397375%3A-1%3A-1; expires=Sat, 25-Nov-2023 17:29:33 GMT; Max-Age=31535998; path=/; domain=.facebook.com; secure; httponly; SameSite=None
+Location: https://m.facebook.com/login/?refsrc=deprecated&_rdr
+report-to: {"max_age":259200,"endpoints":[{"url":"https:\/\/m.facebook.com\/ajax\/mtouch_error_reports\/?device_level=unknown"}]}
+content-security-policy-report-only: default-src data: blob: 'self' https://*.fbsbx.com 'unsafe-inline' *.facebook.com 'unsafe-eval' *.fbcdn.net *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;script-src *.facebook.com *.fbcdn.net 'unsafe-inline' 'unsafe-eval' blob: data: 'self' *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;style-src *.fbcdn.net data: *.facebook.com 'unsafe-inline' *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;connect-src *.facebook.com facebook.com *.fbcdn.net wss://*.facebook.com:* wss://*.whatsapp.com:* wss://*.fbcdn.net attachment.fbsbx.com blob: *.cdninstagram.com 'self' http://localhost:3103 wss://gateway.facebook.com wss://edge-chat.facebook.com wss://snaptu-d.facebook.com wss://kaios-d.facebook.com/ v.whatsapp.net *.fbsbx.com *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;font-src data: *.facebook.com *.fbcdn.net *.fbsbx.com *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;img-src *.fbcdn.net *.facebook.com data: https://*.fbsbx.com facebook.com *.cdninstagram.com fbsbx.com fbcdn.net blob: android-webview-video-poster: *.whatsapp.net *.oculuscdn.com *.whatsapp.com whatsapp.com whatsapp.net;media-src *.cdninstagram.com blob: *.fbcdn.net *.fbsbx.com www.facebook.com *.facebook.com data: *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;frame-src *.facebook.com *.fbsbx.com fbsbx.com data: *.fbcdn.net *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;worker-src blob: *.facebook.com data: *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;report-uri https://www.facebook.com/csp/reporting/?m=t&minimize=0;
+content-security-policy: default-src data: blob: 'self' https://*.fbsbx.com 'unsafe-inline' *.facebook.com 'unsafe-eval' *.fbcdn.net *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;script-src *.facebook.com *.fbcdn.net 'unsafe-inline' 'unsafe-eval' blob: data: 'self' *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;style-src *.fbcdn.net data: *.facebook.com 'unsafe-inline' *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;connect-src *.facebook.com facebook.com *.fbcdn.net wss://*.facebook.com:* wss://*.whatsapp.com:* wss://*.fbcdn.net attachment.fbsbx.com blob: *.cdninstagram.com 'self' http://localhost:3103 wss://gateway.facebook.com wss://edge-chat.facebook.com wss://snaptu-d.facebook.com wss://kaios-d.facebook.com/ v.whatsapp.net *.fbsbx.com *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;font-src data: *.facebook.com *.fbcdn.net *.fbsbx.com *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;img-src *.fbcdn.net *.facebook.com data: https://*.fbsbx.com facebook.com *.cdninstagram.com fbsbx.com fbcdn.net blob: android-webview-video-poster: *.whatsapp.net *.oculuscdn.com *.whatsapp.com whatsapp.com whatsapp.net;media-src *.cdninstagram.com blob: *.fbcdn.net *.fbsbx.com www.facebook.com *.facebook.com data: *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;frame-src *.facebook.com *.fbsbx.com fbsbx.com data: *.fbcdn.net *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;worker-src blob: *.facebook.com data: *.whatsapp.com whatsapp.com *.whatsapp.net whatsapp.net;report-uri https://www.facebook.com/csp/reporting/?m=t&minimize=0;
+x-fb-rlafr: 0
+document-policy: force-load-at-top
+cross-origin-resource-policy: same-origin
+cross-origin-opener-policy: unsafe-none
+Pragma: no-cache
+Cache-Control: private, no-cache, no-store, must-revalidate
+Expires: Sat, 01 Jan 2000 00:00:00 GMT
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+X-Frame-Options: DENY
+Access-Control-Expose-Headers: X-FB-Debug, X-Loader-Length
+Access-Control-Allow-Methods: OPTIONS
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Origin: https://m.facebook.com
+Vary: Origin
+Content-Type: text/html; charset=utf-8
+Strict-Transport-Security: max-age=15552000; preload; includeSubDomains
+X-FB-Debug: JgfqmkAk1t2VxuMVWG9OY9n9JXBfh5HM0VY0rvMQ4j05p/mO2la25TAyyopdtTG74QajwkhHI40OrzdOH/mGAQ==
+Date: Fri, 25 Nov 2022 17:29:37 GMT
+Alt-Svc: h3=":443"; ma=86400
+Connection: keep-alive
+Content-Length: 0
+
