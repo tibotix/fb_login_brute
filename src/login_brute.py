@@ -155,7 +155,7 @@ def main():
         proxies = {"http": f"http://{args.proxy}", "https": f"https://{args.proxy}"}
 
     bruter = FBLoginBruter(args.email_or_phone, args.cooldown_time, args.blocking_pause, proxies, args.verbose)
-    if not bruter.brute(args.wordlist.readlines()[args.offset:]):
+    if not bruter.brute(args.wordlist.read().splitlines()[args.offset:]):
         print("Password not found :(")
 
 if __name__ == "__main__":
