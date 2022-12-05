@@ -9,7 +9,7 @@ install_requires = (here / "requirements.txt").read_text(encoding="utf-8").split
 
 setup(
     name="fb_login_brute",
-    version="1.0.1",
+    version="1.0.2",
     description="Facebook login Brute force Attack",
     long_description=long_description,
     long_description_content_type="text/markdown",
