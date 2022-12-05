@@ -64,8 +64,16 @@ class FBLoginBruter:
             return False
         headers["Content-Type"] = "application/x-www-form-urlencoded"
         b = bs4.BeautifulSoup(r.text, self.bs4_parser)
-        lsd = b.find(attrs={"name": "lsd"})["value"]
-        jazoest = b.find(attrs={"name": "jazoest"})["value"]
+        lsd = b.find(attrs={"name": "lsd"})
+        if lsd is None:
+            self.debug("could not find lsd")
+            return False
+        lsd = lsd["value"]
+        jazoest = b.find(attrs={"name": "jazoest"})
+        if jazoest is None:
+            self.debug("could not find jazoest")
+            return False
+        jazoest = jazoest["value"]
         if not (m := re.search("\"_js_datr\".*?,.*?\"(.*?)\"", r.text)):
             self.debug("could not find _js_datr")
             return False
