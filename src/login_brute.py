@@ -19,7 +19,7 @@ class FBLoginBruter:
         self.user_agent_rotator = self._initiate_user_agent_rotator()
         self.post_data_format = ""
         self.cooldown_time = cooldown_time
-        self.sleep_variance = sleep_variance
+        self.sleep_variance = abs(sleep_variance)
         self.blocked_pause_time_step = blocked_pause_time_step
         self.blocked = False
         self.verbose = verbose
