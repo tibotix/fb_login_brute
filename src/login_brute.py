@@ -123,7 +123,7 @@ class FBLoginBruter:
         self.debug(f"[{password!s}][{idx!s}] {r.status_code} {str(r.cookies)} {r.headers.get('Location', '<Location header not found>')}")
     
     def _estimate_time_for_wordlist_length(self, length):
-        seconds_per_pass = self.cooldown_time + 2
+        seconds_per_pass = self.cooldown_time + 1
         initiate_recover_session_after = 350
         initiate_recover_session_time = 30 * 60
         return round(((seconds_per_pass * length) + ((length / initiate_recover_session_after)*initiate_recover_session_time)) / 60 / 60, 2)
