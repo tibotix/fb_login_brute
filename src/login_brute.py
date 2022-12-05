@@ -13,28 +13,30 @@ from random_user_agent.params import OperatingSystem, SoftwareName, Popularity
 LOGIN_URL = "https://m.facebook.com/login/account_recovery/name_search/?flow=initiate_view&ls=initiate_view&c=%2Flogin%2F"
 
 class FBLoginBruter:
-    def __init__(self, email_or_phone, cooldown_time=20, blocked_pause_time_step=3000, proxies=None, verbose=False) -> None:
+    def __init__(self, email_or_phone, cooldown_time=20, sleep_variance=5, blocked_pause_time_step=3000, proxies=None, verbose=False) -> None:
         self.email_or_phone = email_or_phone
         self.proxies = proxies if proxies is not None else dict()
         self.user_agent_rotator = self._initiate_user_agent_rotator()
         self.post_data_format = ""
         self.cooldown_time = cooldown_time
+        self.sleep_variance = sleep_variance
         self.blocked_pause_time_step = blocked_pause_time_step
+        self.blocked = False
         self.verbose = verbose
         self.bs4_parser = "html.parser" if platform.system() == "Windows" else "lxml"
     
-    def _log(self, level, msg, end="\n"):
-        print(f"[{datetime.datetime.now().strftime('%d.%m.%Y %H:%M:%S')}] {level!s}: {msg!s}", end=end)
+    def _log(self, level, msg, **kwargs):
+        print(f"[{datetime.datetime.now().strftime('%d.%m.%Y %H:%M:%S')}] {level!s}: {msg!s}", **kwargs)
     
-    def debug(self, msg, end="\n"):
+    def debug(self, msg, **kwargs):
         if self.verbose:
-            self._log("DEBUG", msg, end)
+            self._log("DEBUG", msg, **kwargs)
     
-    def info(self, msg, end="\n"):
-        self._log("INFO", msg, end)
+    def info(self, msg, **kwargs):
+        self._log("INFO", msg, **kwargs)
     
-    def warning(self, msg, end="\n"):
-        self._log("WARNING", msg, end)
+    def warning(self, msg, **kwargs):
+        self._log("WARNING", msg, **kwargs)
 
     def _initiate_user_agent_rotator(self):
         software_names = (SoftwareName.FIREFOX.value, SoftwareName.CHROME.value, SoftwareName.SAFARI.value)
